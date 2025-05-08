@@ -711,4 +711,36 @@ body {
         opacity: 0;
         transform: translateY(-20px) scale(0.95);
     }
+}
+
+.falling-photos {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.falling-photo {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fallingPhoto linear infinite;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.falling-photo:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@keyframes fallingPhoto {
+    0% {
+        transform: translateY(-100%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
 } 

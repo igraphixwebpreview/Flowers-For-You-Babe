@@ -112,21 +112,45 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000);
     }
 
+    // Create falling photos
+    function createFallingPhotos() {
+        const container = document.querySelector('.falling-photos');
+        const photo = document.createElement('img');
+        photo.className = 'falling-photo';
+        // Randomly select one of the 6 photos
+        const photoNumber = Math.floor(Math.random() * 6) + 1;
+        photo.src = `img${photoNumber}.JPG`;
+        photo.style.left = `${Math.random() * 80}%`; // Keep some margin from edges
+        photo.style.animationDuration = `${3 + Math.random() * 4}s`; // Slower than hearts
+        container.appendChild(photo);
+
+        // Remove photo after animation
+        setTimeout(() => {
+            photo.remove();
+        }, 7000);
+    }
+
     // Start light show
     function startLightShow() {
         loadingScreen.style.display = 'none';
         lightShow.style.display = 'block';
         
-        // Create initial falling hearts
+        // Create initial falling hearts and photos
         for (let i = 0; i < 20; i++) {
             setTimeout(() => {
                 createFallingHearts();
+                if (i % 3 === 0) { // Create a photo every 3 hearts
+                    createFallingPhotos();
+                }
             }, i * 200);
         }
 
-        // Continue creating hearts
+        // Continue creating hearts and photos
         const heartInterval = setInterval(() => {
             createFallingHearts();
+            if (Math.random() < 0.3) { // 30% chance to create a photo
+                createFallingPhotos();
+            }
         }, 300);
 
         // Transition to cards after 5 seconds
