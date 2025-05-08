@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingBar = document.getElementById('loadingBar');
     const startButton = document.getElementById('startButton');
     const loadingScreen = document.getElementById('loadingScreen');
+    const loadingText = document.getElementById('loadingText');
+    const startText = document.getElementById('startText');
     const heartsContainer = document.getElementById('hearts-container');
     const lightShow = document.getElementById('lightShow');
     const cardsSection = document.getElementById('cardsSection');
@@ -44,10 +46,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // When loading is complete
         if (progress >= 100) {
             clearInterval(loadingInterval);
+            // Hide loading text after 3 seconds
             setTimeout(() => {
-                startButton.style.display = 'block';
-                startButton.style.animation = 'fadeIn 1s ease-in-out';
-            }, 500);
+                loadingText.style.display = 'none';
+                // Hide loading bar container
+                document.querySelector('.loading-bar-container').style.display = 'none';
+                // Show start text and button after 4 seconds
+                setTimeout(() => {
+                    startText.style.display = 'block';
+                    startText.style.animation = 'fadeIn 1s ease-in-out';
+                    setTimeout(() => {
+                        startButton.style.display = 'block';
+                        startButton.style.animation = 'fadeIn 1s ease-in-out';
+                    }, 500);
+                }, 1000);
+            }, 3000);
         }
     }, 30);
 
