@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love Letter</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-bar-container">
+            <div class="loading-bar" id="loadingBar"></div>
+            <p class="loading-text">Preparing something special for you babe...</p>
+        </div>
+        <button class="start-button" id="startButton" style="display: none;">Start Now</button>
+        <div class="creator-text">Created by Vernon Francis Your Love Forever - v1.2</div>
+    </div>
+
+    <div id="hearts-container"></div>
+
+    <div class="light-show" id="lightShow" style="display: none;">
+        <div class="falling-hearts"></div>
+        <div class="glow-effects"></div>
+        <div class="transition-overlay"></div>
+    </div>
+
+    <div class="cards-section" id="cardsSection" style="display: none;">
+        <div class="progress-indicator">
+            <div class="heart-progress active"></div>
+            <div class="heart-progress"></div>
+            <div class="heart-progress"></div>
+            <div class="heart-progress"></div>
+            <div class="heart-progress"></div>
+        </div>
+        <div class="cards-container">
+            <!-- Cards will be added dynamically -->
+        </div>
+    </div>
+
+    <div class="love-letter" id="loveLetter" style="display: none;">
+        <div class="letter-content">
+            <div class="letter-header">
+                <h2>My Dearest Alexa,</h2>
+            </div>
+            <div class="letter-body">
+                <p>As I sit here writing this letter, my heart overflows with love and gratitude for having you in my life. Every moment with you feels like a beautiful dream I never want to wake up from.</p>
+                <p>Your smile brightens my darkest days, your laugh is the most beautiful melody, and your love is the greatest gift I've ever received. You make every day special just by being you.</p>
+                <p>I cherish every memory we've created together - from our first date to our latest adventure. Each moment with you is a treasure I hold close to my heart.</p>
+                <p>You are my best friend, my confidant, and my greatest love. I promise to love you more with each passing day, to support you in all your dreams, and to be there for you through every moment of life.</p>
+                <p>Thank you for being the amazing person you are. Thank you for loving me. Thank you for being mine.</p>
+            </div>
+            <div class="letter-footer">
+                <p>Forever Yours,</p>
+                <p class="signature">Vernon</p>
+            </div>
+            <button class="letter-button">I love you babe, I got your letter</button>
+        </div>
+    </div>
+
+    <div class="end-screen" id="endScreen" style="display: none;">
+        <div class="end-content">
+            <div class="final-message">
+                <h2>Screenshot this screen to confirm you got my flowers delivered to you babe.</h2>
+            </div>
+            <div class="bouquet-container">
+                <img src="flowers.png" alt="Beautiful Flowers" class="bouquet-image">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
