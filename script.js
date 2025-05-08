@@ -46,18 +46,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // When loading is complete
         if (progress >= 100) {
             clearInterval(loadingInterval);
-            // Hide loading text after 3 seconds
+            // Hide loading text and bar after 3 seconds
             setTimeout(() => {
-                loadingText.style.display = 'none';
-                // Hide loading bar container
-                document.querySelector('.loading-bar-container').style.display = 'none';
+                loadingText.classList.add('fade-out');
+                document.querySelector('.loading-bar-container').classList.add('fade-out');
                 // Show start text and button after 4 seconds
                 setTimeout(() => {
                     startText.style.display = 'block';
-                    startText.style.animation = 'fadeIn 1s ease-in-out';
+                    // Force a reflow
+                    void startText.offsetWidth;
+                    startText.classList.add('fade-in');
                     setTimeout(() => {
                         startButton.style.display = 'block';
-                        startButton.style.animation = 'fadeIn 1s ease-in-out';
+                        // Force a reflow
+                        void startButton.offsetWidth;
+                        startButton.classList.add('fade-in');
                     }, 500);
                 }, 1000);
             }, 3000);
